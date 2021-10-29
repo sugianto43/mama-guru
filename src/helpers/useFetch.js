@@ -12,8 +12,6 @@ export const useFetch = ({ url, method, body = null }) => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
     
-  const source = axios.CancelToken.source();
-
   useEffect(() => {
     
     const fetchData = async () => {
@@ -24,7 +22,6 @@ export const useFetch = ({ url, method, body = null }) => {
           method,
           headers: { ...headers },
           data: body,
-          cancelToken: source.token,
         });
         setResponse(result.data);
       } catch (errors) {
