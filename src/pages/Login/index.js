@@ -1,4 +1,3 @@
-import axios from 'axios'
 import {useHistory} from "react-router-dom"
 import React, { useEffect, useState } from 'react'
 import { useFetchIf } from '../../helpers/useFetchIf'
@@ -22,6 +21,7 @@ const Login = () => {
     e.preventDefault();
     setStartFetching(true);
   }
+
   const { response, loading } = useFetchIf({
     url: "/api/auth/auth",
     method: "POST",
